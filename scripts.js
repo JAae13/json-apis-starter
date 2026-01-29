@@ -4,6 +4,7 @@ function validateData(e){
 
     // get the word that the user entered in the input, store in variable named word
     // TO DO
+    let word;
 
     word = word.trim();
 
@@ -35,6 +36,7 @@ function getWord(word){
 
     // ready state change event listener
     // TO DO
+        
         // when we get a response...
         // TO DO
             // log the returned text to the console
@@ -45,6 +47,7 @@ function getWord(word){
 
             // check to see if an error was returned from the call
             // TO DO
+            /* PLACE THESE COMMENTS INSIDE OF THE FIRST IF CONDITIONAL THAT CHECKS FOR A VALID ENGLISH WORD AS INSTRUCTED, THEN DELETE THIS LINE AND THE ONE THAT CLOSES THE GROUP
                 // display an error message to the user
                 // TO DO
 
@@ -53,7 +56,22 @@ function getWord(word){
 
                 // ask the user to enter a valid word
                 // display.innerHTML = "<li>Please enter a new word and try again</li>";
+            */
+    
+            // check to see if the word is valid but the dictionary doesn't have any definitions
             // TO DO
+
+            /* PLACE THESE COMMENTS INSIDE OF THE ELSE IF CONDITIONAL THAT CHECKS FOR A VALID ENGLISH WORD THAT THERE ISN'T A DEFINITION FOR AS INSTRUCTED, THEN DELETE THIS LINE AND THE ONE THAT CLOSES THE GROUP
+                // display the word the user entered on the page
+                // userWord.innerHTML = `<strong>${word}</strong>`;
+
+                // display a message explaining that the dictionary does not include definitions of this word
+                // display.innerHTML = `<li>The dictionary does not include definitions for this word</li>`;
+
+            */
+
+            // handle displaying definitions for a valid word
+            /* PLACE THESE COMMENTS INSIDE OF THE ELSE CONDITIONAL THAT HANDLES VALID WORD AND DEFINITIONS RETURNED AS INSTRUCTED, THEN DELETE THIS LINE AND THE ONE THAT CLOSES THE GROUP
                 // this means we got our data back and can display it from the JSON
                 // display the word entered on the page
                 // TO DO
@@ -65,13 +83,11 @@ function getWord(word){
                 // TO DO
                     // each definition is displayed in a list item
                     // TO DO
-                
+            */
 
                 // clear the user input to make room for another word
                 resetInput();
-            }
-        }
-    });
+        
 
     // start of endpoint to API
     // TO DO
@@ -105,6 +121,10 @@ function resetDisplay(){
 
 //attach event handler to button in form
 document.getElementById("get-defs").addEventListener("click", validateData);
+
+// update copyright year in footer
+let today = new Date();
+document.querySelector("footer span").textContent = today.getFullYear();
 
 /* Example of returned JSON data for the word "no"
     {

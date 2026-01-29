@@ -44,6 +44,7 @@ function getWord(word){
             
             // parse the response into JSON
             let wordInfo = JSON.parse(this.responseText);
+            console.log(wordInfo.results);
 
             // check to see if an error was returned from the call
             if(wordInfo.hasOwnProperty("query") || wordInfo.success === false){
@@ -85,7 +86,7 @@ function getWord(word){
     const PATH = "https://wordsapiv1.p.rapidapi.com/words/";
 
     // full path of endpoint to get a definition
-    let url = `${PATH}${word}/definitions`;
+    let url = `${PATH}${word}`;
 
     // open the connection with the ajax object
     xhr.open("GET", url);
